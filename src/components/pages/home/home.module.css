@@ -1,0 +1,179 @@
+.ec_container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+span {
+  position: absolute;
+}
+
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@keyframes green-rectangle-anim {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes red-triangle-anim {
+  50% {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(25px) rotate(-53deg);
+  }
+}
+
+@keyframes yellow-semicircle-anim {
+  40% {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(40px) rotate(-1deg);
+  }
+}
+
+@keyframes blue-circle-anim-y {
+  50% {
+    animation-timing-function: cubic-bezier(0.55, 0, 0.2, 1);
+    transform: translateY(17px);
+  }
+}
+
+@keyframes grey-rounded-rectangle-anim {
+  65% {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(-48px) rotate(-75deg);
+  }
+}
+
+.green_rectangle {
+  -webkit-mask: url("../../../assets/green_rectangle.svg") no-repeat bottom
+    right;
+  animation: green-rectangle-anim 40s infinite linear;
+  background-color: rgb(49, 167, 83);
+  bottom: 8%;
+  content: " ";
+  height: 371px;
+  right: -250px;
+  width: 371px;
+}
+
+.red_triangle {
+  -webkit-mask: url("../../../assets/red_triangle.svg") no-repeat bottom left;
+  animation: red-triangle-anim 9.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  background-color: rgb(233, 66, 53);
+  bottom: 15%;
+  content: " ";
+  height: 74px;
+  left: 12%;
+  width: 65px;
+}
+
+.yellow_semicircle {
+  -webkit-mask: url("../../../assets/yellow_semicircle.svg") no-repeat top right;
+  animation: yellow-semicircle-anim 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  background-color: rgb(250, 207, 76);
+  content: " ";
+  height: 171px;
+  right: 28.5%;
+  top: -50px;
+  transform: rotate(-7deg);
+  width: 211px;
+}
+
+.blue_circle_container {
+  animation: blue-circle-anim-x 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  left: calc(13% - 50px);
+  top: calc(18% - 26px);
+}
+
+.blue_circle_container::after {
+  -webkit-mask: url("../../../assets/blue_circle.svg") no-repeat top left;
+  animation: blue-circle-anim-y 9s cubic-bezier(0.25, 0, 0.2, 1) infinite;
+  background-color: rgb(26, 115, 232);
+  content: " ";
+  height: 43px;
+  position: absolute;
+  width: 43px;
+}
+
+.yellow_dots {
+  -webkit-mask: url("../../../assets/yellow_dots.svg") no-repeat top left;
+  background-color: rgb(253, 214, 99);
+  content: " ";
+  height: 57px;
+  left: 13%;
+  top: 18%;
+  width: 76px;
+}
+
+.grey_rounded_rectangle {
+  -webkit-mask: url("../../../assets/grey_rounded_rectangle.svg") no-repeat top
+    left;
+  animation: grey-rounded-rectangle-anim 10s cubic-bezier(0.4, 0, 0.2, 1)
+    infinite;
+  background-color: rgb(241, 243, 244);
+  content: " ";
+  height: 132px;
+  left: -42px;
+  top: 45%;
+  width: 132px;
+}
+
+/* elastic text */
+
+.content svg {
+  position: absolute;
+  width: 500px;
+  top: -150px;
+  left: -50px;
+  fill: none;
+}
+
+.content svg path {
+  d: path("M0, 25 C150,110 150,-60 300,25");
+  stroke: #e94235;
+  stroke-width: 50px;
+  stroke-linecap: round;
+  transform: translate(50px, 50%);
+  animation: animate 5s ease-in-out infinite;
+}
+
+.content svg text {
+  d: path("M0, 25 C150,110 150,-60 300,25");
+  stroke: #e94235;
+  opacity: 1;
+  margin: 50px;
+  font-size: 1.5rem;
+  animation: animate 5s ease-in-out infinite;
+}
+
+@keyframes animate {
+  0% {
+    stroke: #e94235;
+    d: path("M0,25 C150,110 150,-60 300,25");
+  }
+
+  50% {
+    stroke: #31a753;
+    d: path("M0,25 C160,-50 140,110 300,25");
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content svg path {
+    stroke-width: 25px;
+  }
+  .content svg text {
+    tspan: "15";
+  }
+}

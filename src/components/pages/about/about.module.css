@@ -1,0 +1,31 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.col {
+  width: 100%;
+  padding: 2rem;
+}
+
+img {
+  width: 50%;
+}
+
+iframe {
+  width: 560px;
+  height: 315px;
+}
+
+@media screen and (max-width: 480px) {
+  .about {
+    flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+  }
+}
