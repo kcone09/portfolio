@@ -52,7 +52,7 @@ function Work() {
             <p>
               <FaCloudSunRain />
             </p>
-            <a href="https://kcone09.github.io/weather/" target="_blank">
+            <a href="https://kcone09.github.io/pwa_weather_app/" target="_blank">
               <h3>Weather App</h3>
             </a>
           </div>
