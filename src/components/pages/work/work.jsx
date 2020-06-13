@@ -6,6 +6,7 @@ import {
   FaHandHoldingHeart,
   FaCloudSunRain,
   FaPhotoVideo,
+  FaHeartbeat
 } from "react-icons/fa";
 
 function Work() {
@@ -53,6 +54,17 @@ function Work() {
             </p>
             <a href="https://kcone09.github.io/weather/" target="_blank">
               <h3>Weather App</h3>
+            </a>
+          </div>
+        </div>
+
+        <div className={styles.column}>
+          <div className={styles.card}>
+            <p>
+              <FaHeartbeat />
+            </p>
+            <a href="https://kcone09.github.io/relaxer-app/" target="_blank">
+              <h3>Relaxer App</h3>
             </a>
           </div>
         </div>
