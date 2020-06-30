@@ -22,3 +22,8 @@ a {
   text-decoration: none;
   color: azure;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
